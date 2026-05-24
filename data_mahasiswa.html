@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Mahasiswa - LibWA Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-dashboard">
+    <aside class="sidebar">
+      <div class="logo"><h2>LibWA Admin</h2><p>LIBRARY AUTOMATION</p></div>
+      <a href="index.html" class="menu-item">📊 Dashboard</a>
+      <a href="data_mahasiswa.html" class="menu-item aktif">👥 Data Mahasiswa</a>
+      <a href="peminjaman.html" class="menu-item">📚 Peminjaman</a>
+      <a href="status_bot.html" class="menu-item">🤖 Status Bot</a>
+    </aside>
+
+    <main class="konten-utama">
+      <div class="header-konten"><h2>Data Mahasiswa</h2></div>
+      <div class="kartu-data">
+        <div class="aksi-tabel">
+          <div class="kotak-cari">🔍 <input type="text" id="searchMahasiswa" placeholder="Cari NIM atau Nama..."></div>
+          <button class="btn-tambah" id="btnTambahMhs">+ Tambah Mahasiswa</button>
+        </div>
+        <table class="tabel-mahasiswa">
+          <thead><tr><th>NIM</th><th>NAMA</th><th>PRODI</th><th>NO WHATSAPP</th><th>AKSI</th></tr></thead>
+          <tbody id="mhsTableBody"><tr><td colspan="5" style="text-align:center;">Memuat...</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Tambah Mahasiswa -->
+  <div id="modalMhs" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeMhsModal">&times;</span>
+      <h3>Tambah Mahasiswa Baru</h3>
+      <form id="formMhs">
+        <div class="form-group"><label>NIM</label><input type="text" id="nimMhs" required></div>
+        <div class="form-group"><label>NAMA LENGKAP</label><input type="text" id="namaMhs" required></div>
+        <div class="form-group"><label>PRODI</label><input type="text" id="prodiMhs" required></div>
+        <div class="form-group"><label>NO WHATSAPP (62xxx)</label><input type="text" id="waMhs" required></div>
+        <button type="submit" class="btn-tambah" style="width:100%">Simpan Data</button>
+      </form>
+    </div>
+  </div>
+  <script src="data_mahasiswa.js"></script>
+</body>
+</html>

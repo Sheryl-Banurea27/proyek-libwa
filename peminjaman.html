@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peminjaman - LibWA Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-dashboard">
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>LibWA Admin</h2>
+        <p>LIBRARY AUTOMATION</p>
+      </div>
+      <a href="index.html" class="menu-item">📊 Dashboard</a>
+      <a href="data_mahasiswa.html" class="menu-item">👥 Data Mahasiswa</a>
+      <a href="peminjaman.html" class="menu-item aktif">📚 Peminjaman</a>
+      <a href="status_bot.html" class="menu-item">🤖 Status Bot</a>
+    </aside>
+
+    <main class="konten-utama">
+      <div class="header-konten">
+        <h2>Peminjaman</h2>
+      </div>
+
+      <div class="kartu-data">
+        <div class="aksi-tabel">
+          <h3>Log Peminjaman Buku</h3>
+          <button class="btn-tambah" id="btnTambahPeminjaman">+ Tambah Peminjaman</button>
+        </div>
+        
+        <!-- TABEL DINAMIS (Data akan diisi otomatis oleh JavaScript dari Database) -->
+        <table class="tabel-mahasiswa">
+          <thead>
+            <tr>
+              <th>Mahasiswa</th>
+              <th>Buku</th>
+              <th>Tanggal Pinjam</th>
+              <th>Tenggat</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="peminjamanTableBody">
+            <tr><td colspan="6" style="text-align:center; padding:20px; color:#888;">Memuat data...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL POPUP -->
+  <div id="modalPeminjaman" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Catat Peminjaman Buku</h3>
+      <form id="formPeminjaman">
+        <div class="form-group">
+          <label>NAMA MAHASISWA</label>
+          <input type="text" id="namaMhs" placeholder="Contoh: Budi Santoso" required>
+        </div>
+        <div class="form-group">
+          <label>NIM</label>
+          <input type="text" id="nimMhs" placeholder="Contoh: 12345678" required>
+        </div>
+        <div class="form-group">
+          <label>JUDUL BUKU</label>
+          <input type="text" id="judulBuku" placeholder="Contoh: Algoritma Pemrograman" required>
+        </div>
+        <div class="form-group">
+          <label>TANGGAL PINJAM</label>
+          <input type="date" id="tglPinjam" required>
+        </div>
+        <div class="form-group">
+          <label>TANGGAL TENGGAT KEMBALI</label>
+          <input type="date" id="tglTenggat" required>
+        </div>
+        <button type="submit" class="btn-tambah" style="width:100%">Simpan Log Transaksi</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="peminjaman.js"></script>
+</body>
+</html>

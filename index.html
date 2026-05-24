@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - LibWA Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-dashboard">
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>LibWA Admin</h2>
+        <p>LIBRARY AUTOMATION</p>
+      </div>
+      <a href="index.html" class="menu-item aktif">📊 Dashboard</a>
+      <a href="data_mahasiswa.html" class="menu-item">👥 Data Mahasiswa</a>
+      <a href="peminjaman.html" class="menu-item">📚 Peminjaman</a>
+      <a href="status_bot.html" class="menu-item">🤖 Status Bot</a>
+    </aside>
+
+    <main class="konten-utama">
+      <div class="header-konten">
+  <h2>Dashboard</h2>
+  <div class="header-actions">
+    <!-- Notifikasi Bell -->
+    <div class="notif-wrapper" id="notifWrapper">
+      <span class="bell-icon" id="bellIcon">🔔</span>
+      <span class="notif-badge" id="notifBadge">1</span>
+      <div class="dropdown-menu" id="notifDropdown">
+        <div class="dropdown-header">Notifikasi Jatuh Tempo</div>
+        <div id="notifContent">
+          <div class="notif-item">Memuat...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Menu -->
+    <div class="user-wrapper" id="userWrapper">
+      <span class="user-icon" id="userIcon">👤</span>
+      <span class="user-name" id="userName">Admin</span>
+      <div class="dropdown-menu" id="userDropdown">
+        <div class="dropdown-item" onclick="alert('Fitur Profile - Coming Soon!')">👤 Profile</div>
+        <div class="dropdown-item" onclick="logout()">🚪 Log Out</div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="kartu-statistik">
+        <div class="kartu">
+          <p>TOTAL PEMINJAMAN</p>
+          <h3 id="statTotal">0</h3>
+        </div>
+        <div class="kartu">
+          <p>JATUH TEMPO</p>
+          <h3 id="statDue" class="teks-merah">0</h3>
+        </div>
+        <div class="kartu">
+          <p>BOT TERKIRIM</p>
+          <h3 id="statSent" class="teks-hijau">0</h3>
+        </div>
+      </div>
+
+      <div class="kartu-antrian">
+        <div class="header-antrian">
+          <h3>Daftar Mahasiswa Terdaftar</h3>
+          <a href="data_mahasiswa.html">Lihat Semua</a>
+        </div>
+        
+        <!-- INI TABEL HTML YANG BENAR -->
+        <table class="tabel-mahasiswa">
+          <thead>
+            <tr>
+              <th>NIM</th>
+              <th>NAMA</th>
+              <th>NO WHATSAPP</th>
+              <th>PRODI</th>
+            </tr>
+          </thead>
+          <tbody id="dashboardTableBody">
+            <tr>
+              <td>1234556</td>
+              <td>DELmawan nyo</td>
+              <td>624774893992</td>
+              <td>Sistem Informasi</td>
+            </tr>
+            <tr>
+              <td>2134559</td>
+              <td>Sakasea ia</td>
+              <td>623545809009</td>
+              <td>Manajemen Rekayasa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
